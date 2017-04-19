@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		45B7F8B41EA7BE97008D6A42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8B31EA7BE97008D6A42 /* AppDelegate.swift */; };
-		45B7F8B61EA7BE97008D6A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8B51EA7BE97008D6A42 /* ViewController.swift */; };
 		45B7F8B91EA7BE97008D6A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B7F8B71EA7BE97008D6A42 /* Main.storyboard */; };
 		45B7F8BB1EA7BE97008D6A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B7F8BA1EA7BE97008D6A42 /* Assets.xcassets */; };
 		45B7F8BE1EA7BE97008D6A42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B7F8BC1EA7BE97008D6A42 /* LaunchScreen.storyboard */; };
 		45B7F8C91EA7BE97008D6A42 /* CountryCodePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8C81EA7BE97008D6A42 /* CountryCodePickerTests.swift */; };
 		45B7F8D41EA7BE97008D6A42 /* CountryCodePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8D31EA7BE97008D6A42 /* CountryCodePickerUITests.swift */; };
+		45B7F8E21EA7D3C8008D6A42 /* CountryCodeSelectorTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8E11EA7D3C8008D6A42 /* CountryCodeSelectorTVC.swift */; };
+		45B7F8E41EA7D42A008D6A42 /* CountryCodeSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8E31EA7D42A008D6A42 /* CountryCodeSelectorVC.swift */; };
+		45B7F8E81EA7DC6D008D6A42 /* UILayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8E61EA7DC6D008D6A42 /* UILayout.swift */; };
+		45B7F8E91EA7DC6D008D6A42 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8E71EA7DC6D008D6A42 /* UIView.swift */; };
+		45B7F8EF1EA7EE39008D6A42 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45B7F8EE1EA7EE39008D6A42 /* CountryPicker.bundle */; };
+		45B7F8F11EA7EE5B008D6A42 /* CountryCodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8F01EA7EE5B008D6A42 /* CountryCodeProvider.swift */; };
+		45B7F8F41EA80324008D6A42 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7F8F31EA80324008D6A42 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,6 @@
 /* Begin PBXFileReference section */
 		45B7F8B01EA7BE97008D6A42 /* CountryCodePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryCodePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7F8B31EA7BE97008D6A42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45B7F8B51EA7BE97008D6A42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45B7F8B81EA7BE97008D6A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45B7F8BA1EA7BE97008D6A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45B7F8BD1EA7BE97008D6A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,13 @@
 		45B7F8CF1EA7BE97008D6A42 /* CountryCodePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryCodePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7F8D31EA7BE97008D6A42 /* CountryCodePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodePickerUITests.swift; sourceTree = "<group>"; };
 		45B7F8D51EA7BE97008D6A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B7F8E11EA7D3C8008D6A42 /* CountryCodeSelectorTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeSelectorTVC.swift; sourceTree = "<group>"; };
+		45B7F8E31EA7D42A008D6A42 /* CountryCodeSelectorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeSelectorVC.swift; sourceTree = "<group>"; };
+		45B7F8E61EA7DC6D008D6A42 /* UILayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILayout.swift; sourceTree = "<group>"; };
+		45B7F8E71EA7DC6D008D6A42 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		45B7F8EE1EA7EE39008D6A42 /* CountryPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CountryPicker.bundle; sourceTree = "<group>"; };
+		45B7F8F01EA7EE5B008D6A42 /* CountryCodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeProvider.swift; sourceTree = "<group>"; };
+		45B7F8F31EA80324008D6A42 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,16 @@
 		45B7F8B21EA7BE97008D6A42 /* CountryCodePicker */ = {
 			isa = PBXGroup;
 			children = (
+				45B7F8F21EA80324008D6A42 /* Extension */,
+				45B7F8EC1EA7EE39008D6A42 /* CountryPicker */,
+				45B7F8E51EA7DC6D008D6A42 /* Autolayout */,
 				45B7F8B31EA7BE97008D6A42 /* AppDelegate.swift */,
-				45B7F8B51EA7BE97008D6A42 /* ViewController.swift */,
 				45B7F8B71EA7BE97008D6A42 /* Main.storyboard */,
 				45B7F8BA1EA7BE97008D6A42 /* Assets.xcassets */,
 				45B7F8BC1EA7BE97008D6A42 /* LaunchScreen.storyboard */,
 				45B7F8BF1EA7BE97008D6A42 /* Info.plist */,
+				45B7F8E11EA7D3C8008D6A42 /* CountryCodeSelectorTVC.swift */,
+				45B7F8E31EA7D42A008D6A42 /* CountryCodeSelectorVC.swift */,
 			);
 			path = CountryCodePicker;
 			sourceTree = "<group>";
@@ -123,6 +139,40 @@
 				45B7F8D51EA7BE97008D6A42 /* Info.plist */,
 			);
 			path = CountryCodePickerUITests;
+			sourceTree = "<group>";
+		};
+		45B7F8E51EA7DC6D008D6A42 /* Autolayout */ = {
+			isa = PBXGroup;
+			children = (
+				45B7F8E61EA7DC6D008D6A42 /* UILayout.swift */,
+				45B7F8E71EA7DC6D008D6A42 /* UIView.swift */,
+			);
+			path = Autolayout;
+			sourceTree = "<group>";
+		};
+		45B7F8EC1EA7EE39008D6A42 /* CountryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				45B7F8ED1EA7EE39008D6A42 /* Classes */,
+				45B7F8EE1EA7EE39008D6A42 /* CountryPicker.bundle */,
+			);
+			path = CountryPicker;
+			sourceTree = "<group>";
+		};
+		45B7F8ED1EA7EE39008D6A42 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				45B7F8F01EA7EE5B008D6A42 /* CountryCodeProvider.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		45B7F8F21EA80324008D6A42 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				45B7F8F31EA80324008D6A42 /* String.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +284,7 @@
 			files = (
 				45B7F8BE1EA7BE97008D6A42 /* LaunchScreen.storyboard in Resources */,
 				45B7F8BB1EA7BE97008D6A42 /* Assets.xcassets in Resources */,
+				45B7F8EF1EA7EE39008D6A42 /* CountryPicker.bundle in Resources */,
 				45B7F8B91EA7BE97008D6A42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B7F8B61EA7BE97008D6A42 /* ViewController.swift in Sources */,
+				45B7F8E91EA7DC6D008D6A42 /* UIView.swift in Sources */,
+				45B7F8E21EA7D3C8008D6A42 /* CountryCodeSelectorTVC.swift in Sources */,
+				45B7F8F11EA7EE5B008D6A42 /* CountryCodeProvider.swift in Sources */,
+				45B7F8E81EA7DC6D008D6A42 /* UILayout.swift in Sources */,
+				45B7F8F41EA80324008D6A42 /* String.swift in Sources */,
 				45B7F8B41EA7BE97008D6A42 /* AppDelegate.swift in Sources */,
+				45B7F8E41EA7D42A008D6A42 /* CountryCodeSelectorVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
