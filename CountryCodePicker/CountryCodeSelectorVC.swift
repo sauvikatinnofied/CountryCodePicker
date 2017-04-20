@@ -16,7 +16,7 @@ class CountryCodeSelectorVC: UIViewController {
     // Filtration Helpers
     var searchText = ""
     var isFiltrationGoingOn = false
-    var countrySearchResult = [Country]()
+    var countrySearchResult = [CountryGroup]()
     
     
     // MARK: IBOutlets
@@ -48,16 +48,26 @@ class CountryCodeSelectorVC: UIViewController {
 
 // MARK: - TABLE VIEW DATA SOURCE
 extension CountryCodeSelectorVC : UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        var sections = 1
-        if isFiltrationGoingOn { return sections }
+        
+        // On going searching
+        if isFiltrationGoingOn {
+            return countrySearchResult.count
+        }
+        
+        // No Searching
+        var sections = CountryProvider.shared.groupedCountries.count
         if let _ = self.currentCountryCode { sections += 1 }
         if let _ = self.selectedCountryCode { sections += 1 }
         return sections
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if isFiltrationGoingOn { return countrySearchResult.count }
+        
+        if isFiltrationGoingOn {
+            return countrySearchResult[section].countries.count
+        }
 
         switch section {
         case 0:
@@ -65,7 +75,8 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
         case 1:
             if let _ = self.currentCountryCode { return 1 } else { return 0 }
         default:
-            return CountryProvider.shared.countries.count
+            var letterCountries = CountryProvider.shared.groupedCountries
+            return letterCountries[section - 2].countries.count
 
         }
     }
@@ -75,7 +86,8 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
 
         //Filtration Handling
         if isFiltrationGoingOn {
-            cell.configWithCountry(self.countrySearchResult[indexPath.row])
+            let countriesForSection = countrySearchResult[indexPath.section].countries
+            cell.configWithCountry(countriesForSection[indexPath.row])
             return cell
         }
         
@@ -97,12 +109,10 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
             } else {
                 
             }
-        case 2:
-            // All Countries
-            let country = CountryProvider.shared.countries[indexPath.row]
-            cell.configWithCountry(country)
         default:
-            ()
+            // All Countries
+            let allGroupedCountries = CountryProvider.shared.groupedCountries[indexPath.section - 2].countries
+            cell.configWithCountry(allGroupedCountries[indexPath.row])
         }
         // Cell configuration code
         return cell
@@ -127,19 +137,19 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
             NSLayoutConstraint(item: headerLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.15, constant: 0.0)
         )
         
-        
         var headerText = ""
-        switch section {
-        case 0:
-            headerText = "Current Selection"
-        case 1:
-            headerText = "Current Location"
-        case 2:
-            headerText = "All Countries"
-        default:
-            headerText = "All Countries"
+        if isFiltrationGoingOn {
+            headerText =  self.countrySearchResult[section].letter
+        } else {
+            switch section {
+            case 0:
+                headerText = "Current Selection"
+            case 1:
+                headerText = "Current Location"
+            default:
+                headerText = CountryProvider.shared.groupedCountries[section - 2].letter
+            }
         }
-        if isFiltrationGoingOn { headerText = "All Countries" }
 
         headerLabel.text =  headerText
         view.backgroundColor = .groupTableViewBackground
@@ -171,7 +181,7 @@ extension CountryCodeSelectorVC: UITextFieldDelegate {
         print(searchText)
         isFiltrationGoingOn = searchText.characters.count > 0
         self.searchText = searchText
-        self.countrySearchResult = CountryProvider.shared.getCountriesWithSearchText(self.searchText)
+        self.countrySearchResult = CountryProvider.shared.getLetterWiseGroupedCountries(searchText: self.searchText)
         self.countryTableView.reloadData()
         return true
     }
