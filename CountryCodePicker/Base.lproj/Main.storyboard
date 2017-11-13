@@ -104,7 +104,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QTp-ZQ-wrZ" id="ROA-kO-qt9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBt-gZ-Lhv" userLabel="Cointainer">
@@ -186,7 +186,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="countryTableView" destination="gow-fy-CBR" id="Ccj-Q3-VVL"/>
+                        <outlet property="countryTableView" destination="gow-fy-CBR" id="vB5-wG-6eG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

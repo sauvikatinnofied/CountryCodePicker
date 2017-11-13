@@ -43,6 +43,11 @@ class CountryCodeSelectorVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    class func getCountryCodePicker() -> CountryCodeSelectorVC {
+        let storyBoard = UIStoryboard(name: "CountryPicker", bundle: nil)
+        return storyBoard.instantiateInitialViewController() as! CountryCodeSelectorVC
+    }
 
 }
 
@@ -84,6 +89,7 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCodeSelectorTVC", for: indexPath)as! CountryCodeSelectorTVC
 
+        cell.accessoryType = .none
         //Filtration Handling
         if isFiltrationGoingOn {
             let countriesForSection = countrySearchResult[indexPath.section].countries
@@ -101,6 +107,7 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
             } else {
                 
             }
+            cell.accessoryType = .checkmark
         case 1:
             // Current location
             if let countryCode = self.currentCountryCode,
@@ -127,7 +134,7 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
         let headerLabel = UILabel.autolayoutView()
         headerLabel.font = UIFont(name: "HelveticaNeue-Regular", size: 12.0)
         headerLabel.textAlignment = .natural
-        headerLabel.textColor = UIColor(colorLiteralRed: 64.0/255.0, green: 69.0/255.0, blue: 77.0/255.0, alpha: 1.0)
+        headerLabel.textColor = UIColor(red: 64.0/255.0, green: 69.0/255.0, blue: 77.0/255.0, alpha: 1.0)
         view.addSubview(headerLabel)
         
         headerLabel._setAttribute(attribute: .leading, padding: 17.0)
@@ -162,6 +169,16 @@ extension CountryCodeSelectorVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 49.0
+    }
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if isFiltrationGoingOn {
+            return countrySearchResult.flatMap { $0.letter }
+        } else {
+            return CountryProvider.shared.groupedCountries.flatMap { $0.letter }
+        }
+    }
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return isFiltrationGoingOn ? index : index + 2
     }
 }
 // MARK: - TABLE VIEW DELEGATES
